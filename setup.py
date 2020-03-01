@@ -6,8 +6,8 @@ with open('README.md', 'r', encoding='utf-8') as f:
 packages = find_packages(include=('nonebot', 'nonebot.*'))
 
 setup(
-    name='nonebot',
-    version='1.4.2',
+    name='nonebot-sanic',
+    version='1.4.2a1',
     url='https://github.com/richardchien/nonebot',
     license='MIT License',
     author='Richard Chien',
@@ -19,7 +19,7 @@ setup(
     package_data={
         '': ['*.pyi'],
     },
-    install_requires=['aiocqhttp>=1.2,<1.3', 'aiocache>=0.10,<1.0'],
+    install_requires=['aiocqhttp-sanic>=1.2,<1.3', 'aiocache>=0.10,<1.0'],
     extras_require={
         'scheduler': ['apscheduler'],
     },

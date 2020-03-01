@@ -75,10 +75,10 @@ def init(config_object: Optional[Any] = None) -> None:
     else:
         logger.setLevel(logging.INFO)
 
-    _bot.server_app.before_serving(_start_scheduler)
+    _bot.server_app.register_listener(_start_scheduler, 'before_server_start')
 
 
-async def _start_scheduler():
+async def _start_scheduler(event, loop):
     if scheduler and not scheduler.running:
         scheduler.configure(_bot.config.APSCHEDULER_CONFIG)
         scheduler.start()
